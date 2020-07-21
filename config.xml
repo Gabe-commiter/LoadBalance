@@ -1,0 +1,24 @@
+<Host name="LoadBalance">
+
+	<Balance name="Balance server">
+		<Balance_host count="1">
+			<ip>192.168.0.200</ip>
+			<port>3030</port>
+		</Balance_host>
+	</Balance>
+	
+	<Logical name="Logical server">
+		<Logical_host count="1">
+		  <ip>192.168.0.200</ip>
+		  <port>7070</port>
+		  <conns>5</conns>
+		</Logical_host>
+
+		<Logical_host count="2">
+		  <ip>192.168.0.200</ip>
+		  <port>8080</port>
+		  <conns>5</conns>
+		</Logical_host>
+	</Logical>
+
+</Host>
